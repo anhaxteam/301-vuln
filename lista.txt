@@ -5,3 +5,11 @@ admin.php
 noticia.php
 administracao.php
 admin.php
+adm.php
+dash.php
+dashboard.php
+gerenciamento.php
+artigos.php
+eventos.php
+agenda.php
+evento.php
