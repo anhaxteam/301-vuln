@@ -1,0 +1,7 @@
+index.php
+painel.php
+noticias.php
+admin.php
+noticia.php
+administracao.php
+admin.php
