@@ -4,7 +4,6 @@ noticias.php
 admin.php
 noticia.php
 administracao.php
-admin.php
 adm.php
 dash.php
 dashboard.php
