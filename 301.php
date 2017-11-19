@@ -17,9 +17,9 @@
     public static function iniciar() {
       global $argv;
 
-      echo "\033[31m[>] anhax 301 vuln finder
+      echo "\033[0m\033[31m anhax 301 vuln finder
 [>] buscar caminhos vulneráveis em páginas de administração
-[>] developed by João Artur (K3N1)\033[1m\n\n";
+[>] developed by João Artur (K3N1)\033[0m\n\n";
 
 
       self::comandos();
@@ -40,13 +40,17 @@
       echo "Url: ".$url."\n";
     }
     public static function ajuda() {
+      echo "\033[0m\033[32m";
       echo "-u    =    Definir URL do site\n";
       echo "-l    =    Definir caminho da lista de arquivos\n";
+      echo "\033[0m";
     }
     public static function executar301() {
       if (self::$lista != null and self::$url != null) {
         $lista = explode("\n",file_get_contents(self::$lista));
+        echo "\033[0m\033[35m";
         echo "\n[>] ".count($lista)." caminhos carregados\n[>] Iniciando...\n\n";
+        echo "\033[0m";
 
         foreach ($lista as $url) {
           $site = self::$url.$url;
@@ -69,12 +73,14 @@
 
             }
           } else {
-            echo "[+] Verifique se você preencheu todas as dependências corretamente.\n";
+            echo "\033[0m\033[31m[+] Verifique se você preencheu todas as dependências corretamente.\n";
           }
         }
+        echo "\033[0m\033[32m";
         echo "\n".count(self::$vulneraveis)." caminhos vulneráveis encontrados.\n";
+        echo "\033[0m";
       } else {
-        echo "[+] Verifique se você preencheu todas as dependências corretamente.\n";
+        echo "\033[0m\033[31m[+] Verifique se você preencheu todas as dependências corretamente.\n";
       }
     }
     public static function verificarArgumentos($argumentos) {
